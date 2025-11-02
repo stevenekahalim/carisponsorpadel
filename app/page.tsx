@@ -1,3 +1,5 @@
+import StickyCTA from './components/StickyCTA';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -245,8 +247,10 @@ export default function Home() {
 
       </main>
 
+      <StickyCTA />
+
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-gray-900 text-white py-8 pb-24 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="mb-2">
             <a href="/about" className="hover:text-primary transition">About CSP</a>
