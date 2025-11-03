@@ -1,5 +1,5 @@
 import StickyCTA from './components/StickyCTA';
-import { getVenueWhatsAppLink } from './utils/whatsapp';
+import { getVenueWhatsAppLink, getBrandWhatsAppLink } from './utils/whatsapp';
 
 export default function Home() {
   return (
@@ -86,10 +86,12 @@ export default function Home() {
                   </div>
                 </div>
                 <a
-                  href="/opportunities"
+                  href={getBrandWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
-                  View Deals →
+                  Contact Us →
                 </a>
               </div>
             </div>
@@ -239,12 +241,14 @@ export default function Home() {
                 </div>
               </a>
               <a
-                href="/opportunities"
+                href={getBrandWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-900 text-white px-8 py-5 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I'm a Brand</div>
                 <div className="flex items-center gap-2">
-                  View Deals →
+                  Contact Us →
                 </div>
               </a>
             </div>

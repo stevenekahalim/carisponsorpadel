@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getVenueWhatsAppLink } from '../utils/whatsapp';
+import { getVenueWhatsAppLink, getBrandWhatsAppLink } from '../utils/whatsapp';
 
 export default function StickyCTA() {
   const [isVisible, setIsVisible] = useState(true);
@@ -50,13 +50,15 @@ export default function StickyCTA() {
           </div>
         </a>
         <a
-          href="/opportunities"
+          href={getBrandWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-gray-900 text-white px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-gray-800 transition shadow-md flex flex-col items-center justify-center"
         >
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Brand</div>
           <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
-            <span className="hidden md:inline">View Deals →</span>
-            <span className="md:hidden">View Deals</span>
+            <span className="hidden md:inline">Contact Us →</span>
+            <span className="md:hidden">Contact Us</span>
           </div>
         </a>
       </div>
