@@ -22,10 +22,6 @@ export default function Home() {
                 Brands
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="/opportunities" className="text-gray-600 hover:text-primary transition-all duration-200 whitespace-nowrap relative group">
-                Opps
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-              </a>
             </div>
           </div>
         </div>

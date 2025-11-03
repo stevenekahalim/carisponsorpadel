@@ -17,9 +17,6 @@ export default function ForVenues() {
               <a href="/for-brands" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
                 Brands
               </a>
-              <a href="/opportunities" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
-                Opps
-              </a>
             </div>
           </div>
         </div>
