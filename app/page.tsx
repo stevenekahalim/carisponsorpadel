@@ -1,5 +1,4 @@
 import StickyCTA from './components/StickyCTA';
-import { getVenueWhatsAppLink, getBrandWhatsAppLink } from './utils/whatsapp';
 
 export default function Home() {
   return (
@@ -59,9 +58,7 @@ export default function Home() {
                   </div>
                 </div>
                 <a
-                  href={getVenueWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/for-venues"
                   className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
                   Find Sponsors →
@@ -86,12 +83,10 @@ export default function Home() {
                   </div>
                 </div>
                 <a
-                  href={getBrandWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/for-brands"
                   className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
-                  Contact Us →
+                  See Opportunities →
                 </a>
               </div>
             </div>
@@ -230,9 +225,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12">Ready to get started?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
-                href={getVenueWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/for-venues"
                 className="bg-primary text-gray-900 px-8 py-5 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I Have a Venue/Event</div>
@@ -241,14 +234,12 @@ export default function Home() {
                 </div>
               </a>
               <a
-                href={getBrandWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/for-brands"
                 className="bg-gray-900 text-white px-8 py-5 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I'm a Brand</div>
                 <div className="flex items-center gap-2">
-                  Contact Us →
+                  See Opportunities →
                 </div>
               </a>
             </div>

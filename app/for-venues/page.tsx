@@ -1,4 +1,5 @@
 import { getVenueWhatsAppLink } from '../utils/whatsapp';
+import WhatsAppStickyCTA from '../components/WhatsAppStickyCTA';
 
 export default function ForVenues() {
   return (
@@ -140,7 +141,9 @@ export default function ForVenues() {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8 mt-20">
+      <WhatsAppStickyCTA type="venue" />
+
+      <footer className="bg-gray-900 text-white py-8 mt-20 pb-24 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p>&copy; 2025 CariSponsorPadel. All rights reserved.</p>
         </div>

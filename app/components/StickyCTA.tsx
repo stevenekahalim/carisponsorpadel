@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getVenueWhatsAppLink, getBrandWhatsAppLink } from '../utils/whatsapp';
 
 export default function StickyCTA() {
   const [isVisible, setIsVisible] = useState(true);
@@ -38,9 +37,7 @@ export default function StickyCTA() {
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 py-2 md:py-4 px-2 md:px-4">
       <div className="max-w-3xl mx-auto grid grid-cols-2 gap-2 md:gap-4">
         <a
-          href={getVenueWhatsAppLink()}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/for-venues"
           className="bg-primary text-gray-900 px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-green-400 transition shadow-md flex flex-col items-center justify-center"
         >
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Venue/Event</div>
@@ -50,15 +47,13 @@ export default function StickyCTA() {
           </div>
         </a>
         <a
-          href={getBrandWhatsAppLink()}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/for-brands"
           className="bg-gray-900 text-white px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-gray-800 transition shadow-md flex flex-col items-center justify-center"
         >
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Brand</div>
           <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
-            <span className="hidden md:inline">Contact Us →</span>
-            <span className="md:hidden">Contact Us</span>
+            <span className="hidden md:inline">See Opportunities →</span>
+            <span className="md:hidden">See Opps</span>
           </div>
         </a>
       </div>

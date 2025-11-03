@@ -1,3 +1,6 @@
+import WhatsAppStickyCTA from '../components/WhatsAppStickyCTA';
+import { getBrandWhatsAppLink } from '../utils/whatsapp';
+
 export default function ForBrands() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -101,13 +104,15 @@ export default function ForBrands() {
             Ready to Explore Opportunities?
           </h2>
           <p className="text-gray-800 mb-6 text-lg">
-            Browse our curated sponsorship opportunities
+            Contact us to see curated sponsorship opportunities
           </p>
           <a
-            href="/opportunities"
+            href={getBrandWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg"
           >
-            Browse Opportunities →
+            See Opportunities →
           </a>
         </div>
 
@@ -140,7 +145,9 @@ export default function ForBrands() {
         </div>
       </main>
 
-      <footer className="bg-gray-900 text-white py-8 mt-20">
+      <WhatsAppStickyCTA type="brand" />
+
+      <footer className="bg-gray-900 text-white py-8 mt-20 pb-24 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p>&copy; 2025 CariSponsorPadel. All rights reserved.</p>
         </div>
