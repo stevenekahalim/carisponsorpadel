@@ -2,6 +2,7 @@ import StickyCTA from './components/StickyCTA';
 import ScrollReveal from './components/ScrollReveal';
 import BrandCarousel from './components/BrandCarousel';
 import OpportunitiesCarousel from './components/OpportunitiesCarousel';
+import FloatingOrbs from './components/FloatingOrbs';
 
 export default function Home() {
   return (
@@ -59,6 +60,10 @@ export default function Home() {
           <div className="absolute top-[40%] right-[12%] w-[120px] h-[120px] pointer-events-none z-0 float-gentle opacity-15">
             <div className="w-full h-full rounded-full bg-gradient-radial from-purple-400/30 to-purple-200/10 blur-sm"></div>
           </div>
+
+          {/* Rising Green Orbs */}
+          <FloatingOrbs />
+
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Indonesia's <span className="text-primary">#1</span> Padel<br/>

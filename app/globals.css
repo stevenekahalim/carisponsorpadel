@@ -72,3 +72,25 @@ body {
 .float-gentle {
   animation: float-gentle 12s ease-in-out infinite;
 }
+
+/* Rising Orbs Animation */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-float-up {
+  animation: float-up 10s ease-in-out infinite;
+}
