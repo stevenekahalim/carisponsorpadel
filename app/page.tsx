@@ -5,20 +5,20 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <a href="/" className="text-2xl font-bold text-gray-900">
-              CariSponsor<span className="text-primary">Padel</span>.com
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 md:py-4">
+          <div className="flex justify-between items-center gap-2">
+            <a href="/" className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 flex-shrink-0">
+              CariSponsor<span className="text-primary">Padel</span>
             </a>
-            <div className="flex gap-6">
-              <a href="/for-venues" className="text-gray-600 hover:text-primary transition">
-                For Venues
+            <div className="flex gap-2 sm:gap-3 md:gap-6 text-xs sm:text-sm md:text-base flex-shrink-0">
+              <a href="/for-venues" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+                Venues
               </a>
-              <a href="/for-brands" className="text-gray-600 hover:text-primary transition">
-                For Brands
+              <a href="/for-brands" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+                Brands
               </a>
-              <a href="/opportunities" className="text-gray-600 hover:text-primary transition">
-                Opportunities
+              <a href="/opportunities" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+                Opps
               </a>
             </div>
           </div>
@@ -27,13 +27,13 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Indonesia's <span className="text-primary">#1</span> Padel<br/>
               Sponsorship Platform
             </h1>
-            <p className="text-2xl text-gray-600 mb-12">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 px-2">
               Verified opportunities. Vetted brands.<br/>
               <span className="font-semibold text-gray-800">Fast deals. Zero guesswork.</span>
             </p>
@@ -41,8 +41,8 @@ export default function Home() {
             {/* Two Column Layout with Benefits */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Venue Column */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-primary">
-                <h3 className="text-2xl font-bold mb-6 text-gray-900">For Venues/Events</h3>
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-2 border-primary">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">For Venues/Events</h3>
                 <div className="space-y-3 mb-6 text-left">
                   <div className="flex items-start gap-2">
                     <span className="text-primary text-xl">✓</span>
@@ -66,8 +66,8 @@ export default function Home() {
               </div>
 
               {/* Brand Column */}
-              <div className="bg-gray-900 rounded-2xl p-8 shadow-lg border-2 border-gray-700">
-                <h3 className="text-2xl font-bold mb-4 text-white">For Brands</h3>
+              <div className="bg-gray-900 rounded-2xl p-6 md:p-8 shadow-lg border-2 border-gray-700">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">For Brands</h3>
                 <div className="space-y-3 mb-6 text-left">
                   <div className="flex items-start gap-2">
                     <span className="text-primary text-xl">✓</span>
@@ -109,18 +109,19 @@ export default function Home() {
         </section>
 
         {/* Trust Bar */}
-        <section className="py-6 bg-primary">
+        <section className="py-4 md:py-6 bg-primary">
           <div className="max-w-6xl mx-auto px-4 text-center">
-            <p className="text-gray-900 font-semibold text-lg">
-              50M+ in sponsorships matched  •  15+ active venues  •  5+ brand partners
+            <p className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg">
+              <span className="hidden sm:inline">50M+ in sponsorships matched  •  15+ active venues  •  5+ brand partners</span>
+              <span className="sm:hidden">50M+ matched  •  15+ venues  •  5+ brands</span>
             </p>
           </div>
         </section>
 
         {/* Featured Opportunities */}
-        <section className="py-20 px-4">
+        <section className="py-12 md:py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Featured Opportunities</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Featured Opportunities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: "Premium 6-Court Venue", location: "Surabaya, East Java", courts: 6, players: "500+", reach: "2000+" },
@@ -160,9 +161,9 @@ export default function Home() {
         </section>
 
         {/* Success Stories */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-12 md:py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Success Stories</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Success Stories</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-gray-50 p-8 rounded-lg">
                 <div className="text-4xl text-primary mb-4">"</div>
@@ -190,9 +191,9 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 px-4">
+        <section className="py-12 md:py-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="font-bold text-lg mb-2">How much does it cost?</h3>
@@ -219,9 +220,9 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12">Ready to get started?</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12">Ready to get started?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
                 href="/for-venues"
