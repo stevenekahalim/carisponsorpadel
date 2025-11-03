@@ -14,13 +14,13 @@ export default function FloatingOrbs() {
   const [orbs, setOrbs] = useState<Orb[]>([]);
 
   useEffect(() => {
-    // Generate 15 small droplet orbs with random properties
-    const generatedOrbs = Array.from({ length: 15 }, (_, i) => ({
+    // Generate 20 small raindrop orbs with random properties
+    const generatedOrbs = Array.from({ length: 20 }, (_, i) => ({
       id: i,
       left: Math.random() * 100, // Random horizontal position (0-100%)
-      delay: Math.random() * 10, // Random delay (0-10s)
-      duration: 6 + Math.random() * 3, // Random duration (6-9s)
-      size: 15 + Math.random() * 20, // Random size (15-35px) - small droplets
+      delay: Math.random() * 12, // Random delay (0-12s)
+      duration: 5 + Math.random() * 3, // Random duration (5-8s)
+      size: 8 + Math.random() * 8, // Random size (8-16px) - tiny raindrops
     }));
     setOrbs(generatedOrbs);
   }, []);
@@ -37,9 +37,9 @@ export default function FloatingOrbs() {
             height: `${orb.size}px`,
             animationDelay: `${orb.delay}s`,
             animationDuration: `${orb.duration}s`,
-            background: `radial-gradient(circle, rgba(16, 185, 129, 0.7) 0%, rgba(52, 211, 153, 0.4) 40%, rgba(16, 185, 129, 0.1) 70%, transparent 100%)`,
-            filter: 'blur(8px)',
-            boxShadow: '0 0 10px rgba(16, 185, 129, 0.3)',
+            background: `linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(52, 211, 153, 0.6) 100%)`,
+            filter: 'blur(1px)',
+            boxShadow: '0 1px 3px rgba(16, 185, 129, 0.4)',
           }}
         />
       ))}
