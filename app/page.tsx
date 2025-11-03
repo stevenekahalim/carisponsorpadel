@@ -1,4 +1,5 @@
 import StickyCTA from './components/StickyCTA';
+import ScrollReveal from './components/ScrollReveal';
 
 export default function Home() {
   return (
@@ -11,14 +12,17 @@ export default function Home() {
               CariSponsor<span className="text-primary">Padel</span>
             </a>
             <div className="flex gap-2 sm:gap-3 md:gap-6 text-xs sm:text-sm md:text-base flex-shrink-0">
-              <a href="/for-venues" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+              <a href="/for-venues" className="text-gray-600 hover:text-primary transition-all duration-200 whitespace-nowrap relative group">
                 Venues
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="/for-brands" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+              <a href="/for-brands" className="text-gray-600 hover:text-primary transition-all duration-200 whitespace-nowrap relative group">
                 Brands
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="/opportunities" className="text-gray-600 hover:text-primary transition whitespace-nowrap">
+              <a href="/opportunities" className="text-gray-600 hover:text-primary transition-all duration-200 whitespace-nowrap relative group">
                 Opps
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
             </div>
           </div>
@@ -108,19 +112,21 @@ export default function Home() {
         </section>
 
         {/* Brands Trust Section */}
-        <section className="py-12 bg-white border-y">
-          <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
-              Brands That Trust Us
-            </h3>
-            <div className="flex justify-center items-center gap-12 flex-wrap opacity-60 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300">
-              <img src="/images/brands/sportx.svg" alt="SportX Indonesia" className="h-10" />
-              <img src="/images/brands/nusacoffee.svg" alt="Nusa Coffee" className="h-10" />
-              <img src="/images/brands/techhub.svg" alt="TechHub.id" className="h-10" />
-              <img src="/images/brands/baliproperties.svg" alt="Bali Properties" className="h-10" />
+        <ScrollReveal>
+          <section className="py-12 bg-white border-y">
+            <div className="max-w-6xl mx-auto px-4">
+              <h3 className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+                Brands That Trust Us
+              </h3>
+              <div className="flex justify-center items-center gap-12 flex-wrap opacity-60 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300">
+                <img src="/images/brands/sportx.svg" alt="SportX Indonesia" className="h-10" />
+                <img src="/images/brands/nusacoffee.svg" alt="Nusa Coffee" className="h-10" />
+                <img src="/images/brands/techhub.svg" alt="TechHub.id" className="h-10" />
+                <img src="/images/brands/baliproperties.svg" alt="Bali Properties" className="h-10" />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
 
         {/* Trust Bar */}
         <section className="py-4 md:py-6 bg-primary">
@@ -133,9 +139,10 @@ export default function Home() {
         </section>
 
         {/* Featured Opportunities */}
-        <section className="py-12 md:py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Featured Opportunities</h2>
+        <ScrollReveal delay={100}>
+          <section className="py-12 md:py-20 px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Featured Opportunities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: "Premium 6-Court Venue", location: "Surabaya, East Java", courts: 6, players: "500+", reach: "2000+", image: "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=400&h=300&fit=crop" },
@@ -173,100 +180,106 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* Success Stories */}
-        <section className="py-12 md:py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Success Stories</h2>
+        <ScrollReveal delay={150}>
+          <section className="py-12 md:py-20 px-4 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Success Stories</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-white border border-border-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-4">
                   <img
-                    src="https://ui-avatars.com/api/?name=Andi+Wijaya&background=10b981&color=fff&size=64&bold=true"
+                    src="https://ui-avatars.com/api/?name=Andi+Wijaya&background=00E67A&color=fff&size=64&bold=true"
                     alt="Andi Wijaya"
-                    className="w-16 h-16 rounded-full"
+                    className="w-16 h-16 rounded-full ring-2 ring-primary/20"
                   />
                   <div>
                     <p className="font-bold text-gray-900">Andi Wijaya</p>
-                    <p className="text-sm text-gray-600">Marketing Director, SportX Indonesia</p>
+                    <p className="text-sm text-text-gray">Marketing Director, SportX Indonesia</p>
                   </div>
                 </div>
-                <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-2 italic">
+                <div className="text-5xl text-primary mb-3 leading-none">"</div>
+                <p className="text-text-dark text-base leading-relaxed italic">
                   CSP helped us close 100M in sponsorships across 8 venues in Q1 2025. We're now the top-of-mind brand in Surabaya's padel scene.
                 </p>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-white border border-border-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-4">
                   <img
-                    src="https://ui-avatars.com/api/?name=Siti+Rahman&background=3b82f6&color=fff&size=64&bold=true"
+                    src="https://ui-avatars.com/api/?name=Siti+Rahman&background=0066FF&color=fff&size=64&bold=true"
                     alt="Siti Rahman"
-                    className="w-16 h-16 rounded-full"
+                    className="w-16 h-16 rounded-full ring-2 ring-secondary-blue/20"
                   />
                   <div>
                     <p className="font-bold text-gray-900">Siti Rahman</p>
-                    <p className="text-sm text-gray-600">Tournament Director, Jakarta Padel Open</p>
+                    <p className="text-sm text-text-gray">Tournament Director, Jakarta Padel Open</p>
                   </div>
                 </div>
-                <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-2 italic">
+                <div className="text-5xl text-primary mb-3 leading-none">"</div>
+                <p className="text-text-dark text-base leading-relaxed italic">
                   Within 3 weeks, CSP secured 50M in sponsors for our tournament series. Their network is unmatched.
                 </p>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-white border border-border-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-4">
                   <img
-                    src="https://ui-avatars.com/api/?name=Budi+Santoso&background=f59e0b&color=fff&size=64&bold=true"
+                    src="https://ui-avatars.com/api/?name=Budi+Santoso&background=F59E0B&color=fff&size=64&bold=true"
                     alt="Budi Santoso"
-                    className="w-16 h-16 rounded-full"
+                    className="w-16 h-16 rounded-full ring-2 ring-status-partial/20"
                   />
                   <div>
                     <p className="font-bold text-gray-900">Budi Santoso</p>
-                    <p className="text-sm text-gray-600">Owner, Surabaya Padel Club</p>
+                    <p className="text-sm text-text-gray">Owner, Surabaya Padel Club</p>
                   </div>
                 </div>
-                <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-2 italic">
+                <div className="text-5xl text-primary mb-3 leading-none">"</div>
+                <p className="text-text-dark text-base leading-relaxed italic">
                   We listed our venue for free and landed a 6-month sponsorship deal worth 25M. CSP handled everything.
                 </p>
               </div>
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* FAQ Section */}
-        <section className="py-12 md:py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">How much does it cost?</h3>
-                <p className="text-gray-600">Free to list. We only earn when you do (10-20% commission on closed deals).</p>
+        <ScrollReveal delay={200}>
+          <section className="py-12 md:py-20 px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <h3 className="font-bold text-lg mb-2 text-text-dark">How much does it cost?</h3>
+                <p className="text-text-gray leading-relaxed">Free to list. We only earn when you do (10-20% commission on closed deals).</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">How long does it take?</h3>
-                <p className="text-gray-600">From submission to first sponsor match: typically 2-4 weeks.</p>
+              <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <h3 className="font-bold text-lg mb-2 text-text-dark">How long does it take?</h3>
+                <p className="text-text-gray leading-relaxed">From submission to first sponsor match: typically 2-4 weeks.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">What if I need help with proposals?</h3>
-                <p className="text-gray-600">We offer professional proposal creation service for 3M (or free if deal closes within 60 days).</p>
+              <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <h3 className="font-bold text-lg mb-2 text-text-dark">What if I need help with proposals?</h3>
+                <p className="text-text-gray leading-relaxed">We offer professional proposal creation service for 3M (or free if deal closes within 60 days).</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">Do you work with small events?</h3>
-                <p className="text-gray-600">Yes! From local community tournaments to major venues.</p>
+              <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <h3 className="font-bold text-lg mb-2 text-text-dark">Do you work with small events?</h3>
+                <p className="text-text-gray leading-relaxed">Yes! From local community tournaments to major venues.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">Can brands customize their sponsorship packages?</h3>
-                <p className="text-gray-600">Absolutely. We specialize in creating custom bundles that fit your budget and target audience.</p>
+              <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <h3 className="font-bold text-lg mb-2 text-text-dark">Can brands customize their sponsorship packages?</h3>
+                <p className="text-text-gray leading-relaxed">Absolutely. We specialize in creating custom bundles that fit your budget and target audience.</p>
               </div>
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
         {/* Final CTA */}
-        <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12">Ready to get started?</h2>
+        <ScrollReveal delay={250}>
+          <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12">Ready to get started?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
                 href="/for-venues"
@@ -289,6 +302,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </ScrollReveal>
 
       </main>
 
