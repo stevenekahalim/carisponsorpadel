@@ -1,4 +1,5 @@
 import StickyCTA from './components/StickyCTA';
+import { getVenueWhatsAppLink } from './utils/whatsapp';
 
 export default function Home() {
   return (
@@ -58,10 +59,12 @@ export default function Home() {
                   </div>
                 </div>
                 <a
-                  href="/for-venues"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md"
+                  href={getVenueWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
-                  Find Me Sponsors →
+                  Find Sponsors →
                 </a>
               </div>
 
@@ -84,9 +87,9 @@ export default function Home() {
                 </div>
                 <a
                   href="/opportunities"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
-                  Show Me Opportunities →
+                  View Deals →
                 </a>
               </div>
             </div>
@@ -225,12 +228,14 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12">Ready to get started?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
-                href="/for-venues"
+                href={getVenueWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary text-gray-900 px-8 py-5 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I Have a Venue/Event</div>
                 <div className="flex items-center gap-2">
-                  Find Me Sponsors →
+                  Find Sponsors →
                 </div>
               </a>
               <a
@@ -239,7 +244,7 @@ export default function Home() {
               >
                 <div className="text-sm font-normal mb-1">I'm a Brand</div>
                 <div className="flex items-center gap-2">
-                  Show Me Opportunities →
+                  View Deals →
                 </div>
               </a>
             </div>

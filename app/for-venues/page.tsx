@@ -1,62 +1,6 @@
-"use client";
-
-import { useState } from "react";
+import { getVenueWhatsAppLink } from '../utils/whatsapp';
 
 export default function ForVenues() {
-  const [formData, setFormData] = useState({
-    contactName: "",
-    whatsapp: "",
-    email: "",
-    venueName: "",
-    category: "venue",
-    city: "",
-    province: "",
-    courtsCount: "",
-    participants: "",
-    frequency: "",
-    socialReach: "",
-    details: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch("/api/submit-venue", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        // Redirect to thank you page after 2 seconds
-        setTimeout(() => {
-          window.location.href = "/thank-you-venue";
-        }, 2000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm border-b">
@@ -99,250 +43,100 @@ export default function ForVenues() {
               <div className="bg-primary text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 1
               </div>
-              <h3 className="font-semibold text-lg mb-2">Submit Your Details</h3>
-              <p className="text-gray-600">Fill out the form with your venue or event information</p>
+              <h3 className="font-semibold text-lg mb-2">Contact Us on WhatsApp</h3>
+              <p className="text-gray-600">Tell us about your venue or event via WhatsApp</p>
             </div>
             <div>
               <div className="bg-primary text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 2
               </div>
-              <h3 className="font-semibold text-lg mb-2">We Review</h3>
-              <p className="text-gray-600">Our team reviews your submission within 24 hours</p>
+              <h3 className="font-semibold text-lg mb-2">We Review & List</h3>
+              <p className="text-gray-600">Our team reviews within 24 hours and adds you to our marketplace</p>
             </div>
             <div>
               <div className="bg-primary text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 3
               </div>
               <h3 className="font-semibold text-lg mb-2">Get Matched</h3>
-              <p className="text-gray-600">We connect you with interested brands via WhatsApp</p>
+              <p className="text-gray-600">We connect you with interested brands and facilitate the deal</p>
             </div>
           </div>
         </div>
 
-        {/* Submission Form */}
-        <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Submit Your Opportunity</h2>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="contactName"
-                    required
-                    value={formData.contactName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    WhatsApp Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="whatsapp"
-                    required
-                    value={formData.whatsapp}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="+6281234567890"
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="john@example.com"
-                  />
-                </div>
+        {/* Benefits */}
+        <div className="bg-white rounded-lg p-6 md:p-8 mb-8 shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Why List With Us?</h2>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="text-primary text-xl flex-shrink-0">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Free to List</h3>
+                <p className="text-gray-600">No upfront costs. Pay only when deals close (10-20% commission)</p>
               </div>
             </div>
-
-            {/* Venue/Event Details */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Venue/Event Details</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Venue/Event Name * (kept private)
-                  </label>
-                  <input
-                    type="text"
-                    name="venueName"
-                    required
-                    value={formData.venueName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Graha Padel Surabaya"
-                  />
-                  <p className="text-sm text-gray-500 mt-1">This will be kept confidential and anonymized when displayed</p>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Category *
-                  </label>
-                  <select
-                    name="category"
-                    required
-                    value={formData.category}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    <option value="venue">Venue</option>
-                    <option value="tournament">Tournament</option>
-                    <option value="community">Community</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    City *
-                  </label>
-                  <input
-                    type="text"
-                    name="city"
-                    required
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Surabaya"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Province *
-                  </label>
-                  <input
-                    type="text"
-                    name="province"
-                    required
-                    value={formData.province}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Jawa Timur"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Number of Courts
-                  </label>
-                  <input
-                    type="number"
-                    name="courtsCount"
-                    value={formData.courtsCount}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="6"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Expected Participants
-                  </label>
-                  <input
-                    type="number"
-                    name="participants"
-                    value={formData.participants}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="150"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Frequency
-                  </label>
-                  <select
-                    name="frequency"
-                    value={formData.frequency}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    <option value="">Select frequency</option>
-                    <option value="Daily">Daily</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="One-time">One-time Event</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Social Media Reach
-                  </label>
-                  <input
-                    type="number"
-                    name="socialReach"
-                    value={formData.socialReach}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="5000"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Additional Details *
-                  </label>
-                  <textarea
-                    name="details"
-                    required
-                    value={formData.details}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Tell us about your sponsorship opportunity, target budget range, what you can offer sponsors, etc."
-                  />
-                </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary text-xl flex-shrink-0">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Access to Verified Brands</h3>
+                <p className="text-gray-600">We work with legitimate brands across F&B, sports, fashion, and more</p>
               </div>
             </div>
-
-            {/* Submit Button */}
-            <div className="flex flex-col items-center gap-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-primary text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-400 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Submit for Review"}
-              </button>
-
-              {submitStatus === "success" && (
-                <p className="text-green-600 font-medium">
-                  ✓ Submission successful! Redirecting to confirmation...
-                </p>
-              )}
-
-              {submitStatus === "error" && (
-                <p className="text-red-600 font-medium">
-                  ✗ Error submitting form. Please try again.
-                </p>
-              )}
-
-              <p className="text-sm text-gray-600 text-center">
-                By submitting, you agree to be contacted via WhatsApp for sponsorship matching
-              </p>
+            <div className="flex items-start gap-3">
+              <span className="text-primary text-xl flex-shrink-0">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Professional Support</h3>
+                <p className="text-gray-600">Need help creating a proposal? We offer professional proposal creation (3M, or free if deal closes within 60 days)</p>
+              </div>
             </div>
-          </form>
+            <div className="flex items-start gap-3">
+              <span className="text-primary text-xl flex-shrink-0">✓</span>
+              <div>
+                <h3 className="font-semibold mb-1">Fast Turnaround</h3>
+                <p className="text-gray-600">From submission to first match: typically 2-4 weeks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-gradient-to-r from-primary to-green-600 rounded-lg p-8 md:p-12 text-center shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Find Sponsors?
+          </h2>
+          <p className="text-gray-800 mb-6 text-lg">
+            Chat with us on WhatsApp to get started
+          </p>
+          <a
+            href={getVenueWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg"
+          >
+            💬 Contact Us on WhatsApp
+          </a>
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-12 bg-white rounded-lg p-6 md:p-8 shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">Common Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-bold text-lg mb-2">How much does it cost?</h3>
+              <p className="text-gray-600">Free to list. We only earn when you do (10-20% commission on closed deals).</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-2">What if I don't have a sponsorship proposal?</h3>
+              <p className="text-gray-600">We offer professional proposal creation service for 3M (or free if deal closes within 60 days).</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-2">Do you work with small events?</h3>
+              <p className="text-gray-600">Yes! From local community tournaments to major venues - all are welcome.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-2">How long does the process take?</h3>
+              <p className="text-gray-600">From submission to first sponsor match: typically 2-4 weeks.</p>
+            </div>
+          </div>
         </div>
       </main>
 

@@ -1,59 +1,4 @@
-"use client";
-
-import { useState } from "react";
-
 export default function ForBrands() {
-  const [formData, setFormData] = useState({
-    company: "",
-    contactPerson: "",
-    whatsapp: "",
-    email: "",
-    industry: "",
-    budget: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch("/api/submit-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          interestedIn: "General",
-        }),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setTimeout(() => {
-          window.location.href = "/thank-you-brand";
-        }, 2000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm border-b">
@@ -113,194 +58,61 @@ export default function ForBrands() {
           </div>
         </div>
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left: Why Sponsor Padel */}
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Why Sponsor Padel?</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">✓</span>
-                <span>
-                  <strong>Fast Growing Sport:</strong> Padel is the fastest growing racquet sport globally
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">✓</span>
-                <span>
-                  <strong>Affluent Audience:</strong> Players are typically professionals and business owners
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">✓</span>
-                <span>
-                  <strong>High Engagement:</strong> Padel creates strong community bonds and brand loyalty
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">✓</span>
-                <span>
-                  <strong>Social Media Reach:</strong> Players actively share their games on social platforms
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">✓</span>
-                <span>
-                  <strong>Long-term Visibility:</strong> Court banners and venue branding seen daily by hundreds
-                </span>
-              </li>
-            </ul>
-
-            <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-semibold mb-2">Not sure where to start?</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Browse our curated sponsorship opportunities to see what's available
-              </p>
-              <a
-                href="/opportunities"
-                className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-              >
-                Browse Opportunities
-              </a>
-            </div>
-          </div>
-
-          {/* Right: General Inquiry Form */}
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Get Started</h2>
-            <p className="text-gray-600 mb-6">
-              Fill out this form and we'll contact you within 24 hours to discuss sponsorship opportunities
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Company Name *
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  required
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Wilson Indonesia"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Contact Person *
-                </label>
-                <input
-                  type="text"
-                  name="contactPerson"
-                  required
-                  value={formData.contactPerson}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Jane Smith"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  WhatsApp Number *
-                </label>
-                <input
-                  type="tel"
-                  name="whatsapp"
-                  required
-                  value={formData.whatsapp}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="+6281234567890"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="jane@wilson.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Industry
-                </label>
-                <input
-                  type="text"
-                  name="industry"
-                  value={formData.industry}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Sports Equipment, F&B, Real Estate, etc."
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Budget Range (IDR, optional)
-                </label>
-                <input
-                  type="text"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="e.g., 50-100 million"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Tell us about your sponsorship goals, preferred locations, target audience, etc."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-400 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-              </button>
-
-              {submitStatus === "success" && (
-                <p className="text-green-600 font-medium text-center">
-                  ✓ Inquiry submitted! We'll contact you within 24 hours.
-                </p>
-              )}
-
-              {submitStatus === "error" && (
-                <p className="text-red-600 font-medium text-center">
-                  ✗ Error submitting form. Please try again.
-                </p>
-              )}
-            </form>
-          </div>
+        {/* Why Sponsor Padel */}
+        <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm mb-8 md:mb-12">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Why Sponsor Padel?</h2>
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <span className="text-primary mr-2 flex-shrink-0">✓</span>
+              <span>
+                <strong>Fast Growing Sport:</strong> Padel is the fastest growing racquet sport globally
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary mr-2 flex-shrink-0">✓</span>
+              <span>
+                <strong>Affluent Audience:</strong> Players are typically professionals and business owners
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary mr-2 flex-shrink-0">✓</span>
+              <span>
+                <strong>High Engagement:</strong> Padel creates strong community bonds and brand loyalty
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary mr-2 flex-shrink-0">✓</span>
+              <span>
+                <strong>Social Media Reach:</strong> Players actively share their games on social platforms
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary mr-2 flex-shrink-0">✓</span>
+              <span>
+                <strong>Long-term Visibility:</strong> Court banners and venue branding seen daily by hundreds
+              </span>
+            </li>
+          </ul>
         </div>
 
-        {/* Success Stories (placeholder) */}
-        <div className="mt-12 md:mt-16 bg-white rounded-lg p-6 md:p-8 shadow-sm">
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-primary to-green-600 rounded-lg p-8 md:p-12 text-center shadow-lg mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Explore Opportunities?
+          </h2>
+          <p className="text-gray-800 mb-6 text-lg">
+            Browse our curated sponsorship opportunities
+          </p>
+          <a
+            href="/opportunities"
+            className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg"
+          >
+            Browse Opportunities →
+          </a>
+        </div>
+
+        {/* Success Stories */}
+        <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
           <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8 text-center">Success Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">

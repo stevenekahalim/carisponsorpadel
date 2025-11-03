@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { getBrandWhatsAppLink } from '../utils/whatsapp';
 
 // Type for opportunity cards
 type OpportunityCard = {
@@ -17,167 +18,11 @@ type OpportunityCard = {
   status: "Available" | "Partially Sponsored" | "Fully Sponsored";
 };
 
-// Modal component for inquiry
-function InquiryModal({ card, onClose }: { card: OpportunityCard; onClose: () => void }) {
-  const [formData, setFormData] = useState({
-    company: "",
-    contactPerson: "",
-    whatsapp: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch("/api/submit-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          interestedIn: card.id,
-          budget: "",
-          industry: "",
-        }),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setTimeout(() => {
-          window.location.href = "/thank-you-brand";
-        }, 2000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      console.error("Error submitting inquiry:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-white rounded-lg max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <div className="flex justify-between items-start mb-4 md:mb-6">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Request Information</h2>
-            <p className="text-sm md:text-base text-gray-600 mt-2">About: {card.title}</p>
-          </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl flex-shrink-0">
-            ×
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-              <input
-                type="text"
-                required
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-                placeholder="Your Company"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Contact Person *</label>
-              <input
-                type="text"
-                required
-                value={formData.contactPerson}
-                onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-                placeholder="Your Name"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp *</label>
-              <input
-                type="tel"
-                required
-                value={formData.whatsapp}
-                onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-                placeholder="+6281234567890"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-              <input
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-                placeholder="email@company.com"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-            <textarea
-              required
-              rows={4}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-              placeholder="Tell us about your interest in this sponsorship opportunity..."
-            />
-          </div>
-
-          <div className="flex gap-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="flex-1 bg-primary text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 disabled:bg-gray-300"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-            </button>
-          </div>
-
-          {submitStatus === "success" && (
-            <p className="text-green-600 font-medium text-center">
-              ✓ Inquiry submitted! Redirecting...
-            </p>
-          )}
-
-          {submitStatus === "error" && (
-            <p className="text-red-600 font-medium text-center">
-              ✗ Error submitting inquiry. Please try again.
-            </p>
-          )}
-        </form>
-      </div>
-    </div>
-  );
-}
-
 export default function Opportunities() {
   const [cards, setCards] = useState<OpportunityCard[]>([]);
   const [filteredCards, setFilteredCards] = useState<OpportunityCard[]>([]);
   const [selectedType, setSelectedType] = useState<string>("all");
   const [selectedProvince, setSelectedProvince] = useState<string>("all");
-  const [selectedCard, setSelectedCard] = useState<OpportunityCard | null>(null);
   const [loading, setLoading] = useState(true);
 
   // Fetch cards from API
@@ -393,23 +238,30 @@ export default function Opportunities() {
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <button
-                    onClick={() => setSelectedCard(card)}
-                    disabled={card.status === "Fully Sponsored"}
-                    className="w-full bg-primary text-gray-900 px-4 py-3 rounded-lg font-semibold hover:bg-green-400 transition disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
-                  >
-                    {card.status === "Fully Sponsored" ? "Fully Sponsored" : "Request Info"}
-                  </button>
+                  {/* CTA Button - WhatsApp Link */}
+                  {card.status === "Fully Sponsored" ? (
+                    <button
+                      disabled
+                      className="w-full bg-gray-200 text-gray-400 px-4 py-3 rounded-lg font-semibold cursor-not-allowed"
+                    >
+                      Fully Sponsored
+                    </button>
+                  ) : (
+                    <a
+                      href={getBrandWhatsAppLink(card.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-primary text-gray-900 px-4 py-3 rounded-lg font-semibold hover:bg-green-400 transition text-center"
+                    >
+                      Request Info
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         )}
       </main>
-
-      {/* Inquiry Modal */}
-      {selectedCard && <InquiryModal card={selectedCard} onClose={() => setSelectedCard(null)} />}
 
       <footer className="bg-gray-900 text-white py-8 mt-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
