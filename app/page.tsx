@@ -1,5 +1,7 @@
 import StickyCTA from './components/StickyCTA';
 import ScrollReveal from './components/ScrollReveal';
+import BrandCarousel from './components/BrandCarousel';
+import OpportunitiesCarousel from './components/OpportunitiesCarousel';
 
 export default function Home() {
   return (
@@ -33,18 +35,29 @@ export default function Home() {
         {/* Hero Section */}
         <section className="py-12 md:py-20 px-4 relative bg-gradient-to-b from-white to-bg-gray-50 overflow-hidden">
           {/* Green gradient orb (top right) */}
-          <div className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] pointer-events-none z-0">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/15 via-primary/5 to-transparent blur-[80px]"></div>
+          <div className="absolute top-[-200px] right-[-200px] w-[700px] h-[700px] pointer-events-none z-0">
+            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/25 via-primary/8 to-transparent blur-[100px]"></div>
           </div>
 
           {/* Blue gradient orb (bottom left) */}
           <div className="absolute bottom-[-200px] left-[-200px] w-[500px] h-[500px] pointer-events-none z-0">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-secondary-blue/10 via-secondary-blue/3 to-transparent blur-[80px]"></div>
+            <div className="w-full h-full rounded-full bg-gradient-radial from-secondary-blue/15 via-secondary-blue/5 to-transparent blur-[80px]"></div>
           </div>
 
-          {/* Background image (very subtle) */}
-          <div className="absolute inset-0 opacity-5 z-0">
-            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1920&h=1080&fit=crop" alt="Padel Court Background" className="w-full h-full object-cover" />
+          {/* Floating Geometric Shapes */}
+          {/* Large circle - top left - light green */}
+          <div className="absolute top-[10%] left-[5%] w-[200px] h-[200px] pointer-events-none z-0 float-slow opacity-20">
+            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/40 to-primary/10 blur-sm"></div>
+          </div>
+
+          {/* Rounded rectangle - bottom right - light blue */}
+          <div className="absolute bottom-[15%] right-[8%] w-[300px] h-[150px] pointer-events-none z-0 float-medium opacity-15">
+            <div className="w-full h-full rounded-3xl bg-gradient-to-br from-secondary-blue/30 to-secondary-blue/10 blur-sm"></div>
+          </div>
+
+          {/* Small circle - middle right - light purple */}
+          <div className="absolute top-[40%] right-[12%] w-[120px] h-[120px] pointer-events-none z-0 float-gentle opacity-15">
+            <div className="w-full h-full rounded-full bg-gradient-radial from-purple-400/30 to-purple-200/10 blur-sm"></div>
           </div>
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
@@ -111,20 +124,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brands Trust Section */}
+        {/* Brands Trust Section - Auto-Scrolling Carousel */}
         <ScrollReveal>
-          <section className="py-12 bg-white border-y">
-            <div className="max-w-6xl mx-auto px-4">
-              <h3 className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
+          <section className="bg-white border-y">
+            <div className="max-w-7xl mx-auto px-4">
+              <h3 className="text-center text-gray-500 text-sm uppercase tracking-wider pt-12 mb-4">
                 Brands That Trust Us
               </h3>
-              <div className="flex justify-center items-center gap-12 flex-wrap opacity-60 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300">
-                <img src="/images/brands/sportx.svg" alt="SportX Indonesia" className="h-10" />
-                <img src="/images/brands/nusacoffee.svg" alt="Nusa Coffee" className="h-10" />
-                <img src="/images/brands/techhub.svg" alt="TechHub.id" className="h-10" />
-                <img src="/images/brands/baliproperties.svg" alt="Bali Properties" className="h-10" />
-              </div>
             </div>
+            <BrandCarousel />
           </section>
         </ScrollReveal>
 
@@ -138,48 +146,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Opportunities */}
+        {/* Featured Opportunities - Carousel */}
         <ScrollReveal delay={100}>
-          <section className="py-12 md:py-20 px-4">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Featured Opportunities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: "Premium 6-Court Venue", location: "Surabaya, East Java", courts: 6, players: "500+", reach: "2000+", image: "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=400&h=300&fit=crop" },
-                { title: "Elite Sports Complex", location: "Jakarta Selatan", courts: 8, players: "800+", reach: "5000+", image: "https://images.unsplash.com/photo-1595435742656-5272d0f6c8c1?w=400&h=300&fit=crop" },
-                { title: "Coastal Padel Club", location: "Bali, Canggu", courts: 4, players: "300+", reach: "3000+", image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&h=300&fit=crop" },
-                { title: "Championship Tournament", location: "Bandung", courts: 10, players: "1000+", reach: "10000+", image: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=300&fit=crop" },
-                { title: "Community Padel Center", location: "Yogyakarta", courts: 3, players: "200+", reach: "1500+", image: "https://images.unsplash.com/photo-1576678927484-cc907957ee7a?w=400&h=300&fit=crop" },
-                { title: "Executive Sports Hub", location: "Jakarta Pusat", courts: 5, players: "600+", reach: "4000+", image: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=300&fit=crop" }
-              ].map((venue, i) => (
-                <div key={i} className="bg-white rounded-lg border border-border-gray shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
-                  <img src={venue.image} alt={venue.title} className="h-40 w-full object-cover" />
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Venue</span>
-                      <span className="text-sm font-medium text-green-600">Available</span>
-                    </div>
-                    <h3 className="text-lg font-bold mb-2">{venue.title}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{venue.location}</p>
-                    <div className="space-y-1 text-sm text-gray-600 mb-4">
-                      <div>• {venue.courts} courts</div>
-                      <div>• {venue.players} monthly players</div>
-                      <div>• {venue.reach} social reach</div>
-                    </div>
-                    <a href="/opportunities" className="block w-full bg-gradient-primary text-white text-center py-2 rounded-lg font-semibold shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200">
-                      Request Info
-                    </a>
-                  </div>
-                </div>
-              ))}
+          <section className="py-12 md:py-20">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-4 px-4">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Featured Opportunities</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">Curated padel sponsorship deals ready for your brand</p>
+              </div>
+              <OpportunitiesCarousel />
+              <div className="text-center mt-12">
+                <a href="/opportunities" className="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition">
+                  View All Opportunities →
+                </a>
+              </div>
             </div>
-            <div className="text-center mt-12">
-              <a href="/opportunities" className="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-gray-900 transition">
-                View All Opportunities
-              </a>
-            </div>
-          </div>
-        </section>
+          </section>
         </ScrollReveal>
 
         {/* Success Stories */}

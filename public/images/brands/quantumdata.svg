@@ -1,0 +1,9 @@
+<svg width="140" height="40" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="140" height="40" rx="4" fill="#0891B2"/>
+  <rect x="15" y="15" width="4" height="10" fill="#CFFAFE"/>
+  <rect x="20" y="12" width="4" height="13" fill="#CFFAFE"/>
+  <rect x="25" y="18" width="4" height="7" fill="#CFFAFE"/>
+  <text x="78" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#CFFAFE" text-anchor="middle">
+    QUANTUM DATA
+  </text>
+</svg>
