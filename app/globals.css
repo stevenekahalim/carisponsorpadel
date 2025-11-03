@@ -94,3 +94,35 @@ body {
 .animate-float-up {
   animation: float-up 10s ease-in-out infinite;
 }
+
+/* Rising Orbs with Drift Animation */
+@keyframes float-up-drift {
+  0% {
+    transform: translate(0, 0) scale(0.8);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+    transform: translate(calc(var(--drift) * 0.1), -8vh) scale(0.95);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(calc(var(--drift) * 0.3), -20vh) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(calc(var(--drift) * 0.7), -50vh) scale(0.95);
+  }
+  75% {
+    opacity: 0.5;
+    transform: translate(calc(var(--drift) * 1.1), -75vh) scale(0.8);
+  }
+  100% {
+    transform: translate(calc(var(--drift) * 1.5), -100vh) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-float-up-drift {
+  animation: float-up-drift 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}

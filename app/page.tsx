@@ -161,7 +161,7 @@ export default function Home() {
               </div>
               <OpportunitiesCarousel />
               <div className="text-center mt-12">
-                <a href="/opportunities" className="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition">
+                <a href="/for-brands" className="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition">
                   View All Opportunities →
                 </a>
               </div>
