@@ -58,11 +58,11 @@ export default function Home() {
                   </div>
                   <div className="flex items-start gap-3 group/item">
                     <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
-                    <span className="text-gray-700 text-base sm:text-lg">Pay only when deal closes (10-20%)</span>
+                    <span className="text-gray-700 text-base sm:text-lg">Commission-based (bagi hasil)</span>
                   </div>
                   <div className="flex items-start gap-3 group/item">
                     <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
-                    <span className="text-gray-700 text-base sm:text-lg">Optional: Professional proposal (3M)</span>
+                    <span className="text-gray-700 text-base sm:text-lg">We handle all proposals & pitches</span>
                   </div>
                 </div>
                 <a
@@ -79,15 +79,15 @@ export default function Home() {
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-left">
                   <div className="flex items-start gap-3 group/item">
                     <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
-                    <span className="text-gray-200 text-base sm:text-lg">Curated, verified opportunities</span>
+                    <span className="text-gray-200 text-base sm:text-lg">Sponsor multiple venues at once</span>
                   </div>
                   <div className="flex items-start gap-3 group/item">
                     <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
-                    <span className="text-gray-200 text-base sm:text-lg">Bundle deals = 30-50% savings</span>
+                    <span className="text-gray-200 text-base sm:text-lg">City-wide coverage in one deal</span>
                   </div>
                   <div className="flex items-start gap-3 group/item">
                     <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
-                    <span className="text-gray-200 text-base sm:text-lg">Free consultation available</span>
+                    <span className="text-gray-200 text-base sm:text-lg">Pre-vetted opportunities only</span>
                   </div>
                 </div>
                 <a
@@ -117,8 +117,8 @@ export default function Home() {
         <section className="py-4 md:py-6 bg-primary">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <p className="text-gray-900 font-semibold text-sm md:text-base lg:text-lg">
-              <span className="hidden sm:inline">50M+ in sponsorships matched  •  15+ active venues  •  5+ brand partners</span>
-              <span className="sm:hidden">50M+ matched  •  15+ venues  •  5+ brands</span>
+              <span className="hidden sm:inline">5B+ in sponsorships matched  •  25+ active venues  •  40+ brand partners</span>
+              <span className="sm:hidden">5B+ matched  •  25+ venues  •  40+ brands</span>
             </p>
           </div>
         </section>
@@ -211,7 +211,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                 <h3 className="font-bold text-lg mb-2 text-text-dark">How much does it cost?</h3>
-                <p className="text-text-gray leading-relaxed">Free to list. We only earn when you do (10-20% commission on closed deals).</p>
+                <p className="text-text-gray leading-relaxed">Free to list. We only earn when you do through success-based commission (bagi hasil).</p>
               </div>
               <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                 <h3 className="font-bold text-lg mb-2 text-text-dark">How long does it take?</h3>
@@ -219,7 +219,7 @@ export default function Home() {
               </div>
               <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                 <h3 className="font-bold text-lg mb-2 text-text-dark">What if I need help with proposals?</h3>
-                <p className="text-text-gray leading-relaxed">We offer professional proposal creation service for 3M (or free if deal closes within 60 days).</p>
+                <p className="text-text-gray leading-relaxed">We handle professional proposals for you - free if your deal closes within 60 days.</p>
               </div>
               <div className="bg-white border border-border-gray p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                 <h3 className="font-bold text-lg mb-2 text-text-dark">Do you work with small events?</h3>
