@@ -69,7 +69,7 @@ export default function ForVenues() {
               <span className="text-primary text-xl flex-shrink-0">✓</span>
               <div>
                 <h3 className="font-semibold mb-1">Free to List</h3>
-                <p className="text-gray-600">No upfront costs. Pay only when deals close (10-20% commission)</p>
+                <p className="text-gray-600">Commission-based only (bagi hasil) - you only pay when sponsors pay you</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -83,7 +83,7 @@ export default function ForVenues() {
               <span className="text-primary text-xl flex-shrink-0">✓</span>
               <div>
                 <h3 className="font-semibold mb-1">Professional Support</h3>
-                <p className="text-gray-600">Need help creating a proposal? We offer professional proposal creation (3M, or free if deal closes within 60 days)</p>
+                <p className="text-gray-600">Professional proposals handled for you - free if your deal closes within 60 days</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -120,11 +120,11 @@ export default function ForVenues() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-lg mb-2">How much does it cost?</h3>
-              <p className="text-gray-600">Free to list. We only earn when you do (10-20% commission on closed deals).</p>
+              <p className="text-gray-600">Free to list. We only earn when you do through success-based commission (bagi hasil).</p>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-2">What if I don't have a sponsorship proposal?</h3>
-              <p className="text-gray-600">We offer professional proposal creation service for 3M (or free if deal closes within 60 days).</p>
+              <p className="text-gray-600">We handle professional proposals for you - free if your deal closes within 60 days.</p>
             </div>
             <div>
               <h3 className="font-bold text-lg mb-2">Do you work with small events?</h3>
