@@ -19,7 +19,7 @@ export default function WhatsAppStickyCTA({ type }: WhatsAppStickyCTAProps) {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-gradient-primary text-white px-6 py-4 rounded-lg font-bold text-base md:text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
+          className="block w-full bg-primary text-gray-900 px-6 py-4 rounded-lg font-bold text-base md:text-lg hover:bg-green-400 transition-all duration-200 text-center shadow-md"
         >
           <span className="hidden md:inline">{buttonText} →</span>
           <span className="md:hidden">{mobileText} →</span>

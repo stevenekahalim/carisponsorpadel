@@ -38,7 +38,7 @@ export default function StickyCTA() {
       <div className="max-w-3xl mx-auto grid grid-cols-2 gap-2 md:gap-4">
         <a
           href="/for-venues"
-          className="bg-gradient-primary text-white px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center"
+          className="bg-primary text-gray-900 px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-green-400 transition-all duration-200 flex flex-col items-center justify-center shadow-md"
         >
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Venue/Event</div>
           <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
@@ -48,7 +48,7 @@ export default function StickyCTA() {
         </a>
         <a
           href="/for-brands"
-          className="bg-gradient-primary text-white px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center"
+          className="bg-primary text-gray-900 px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-green-400 transition-all duration-200 flex flex-col items-center justify-center shadow-md"
         >
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Brand</div>
           <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
