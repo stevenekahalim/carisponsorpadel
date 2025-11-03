@@ -2,7 +2,6 @@ import StickyCTA from './components/StickyCTA';
 import ScrollReveal from './components/ScrollReveal';
 import BrandCarousel from './components/BrandCarousel';
 import OpportunitiesCarousel from './components/OpportunitiesCarousel';
-import FloatingOrbs from './components/FloatingOrbs';
 
 export default function Home() {
   return (
@@ -34,93 +33,70 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4 relative bg-gradient-to-b from-white to-bg-gray-50 overflow-hidden">
-          {/* Green gradient orb (top right) */}
-          <div className="absolute top-[-200px] right-[-200px] w-[700px] h-[700px] pointer-events-none z-0">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/25 via-primary/8 to-transparent blur-[100px]"></div>
+        <section className="min-h-[85vh] md:min-h-[80vh] py-16 sm:py-20 md:py-24 lg:py-28 px-4 relative bg-gradient-to-b from-white via-gray-50/30 to-gray-50 overflow-hidden flex items-center">
+          {/* Animated gradient background */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <div className="absolute top-[-10%] right-[-5%] w-[60%] md:w-[50%] h-[60%] rounded-full bg-gradient-radial from-primary/20 via-primary/5 to-transparent blur-[120px] animate-pulse-slow"></div>
+            <div className="absolute bottom-[-10%] left-[-5%] w-[50%] md:w-[40%] h-[50%] rounded-full bg-gradient-radial from-secondary-blue/15 via-secondary-blue/3 to-transparent blur-[100px] animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
           </div>
 
-          {/* Blue gradient orb (bottom left) */}
-          <div className="absolute bottom-[-200px] left-[-200px] w-[500px] h-[500px] pointer-events-none z-0">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-secondary-blue/15 via-secondary-blue/5 to-transparent blur-[80px]"></div>
-          </div>
-
-          {/* Floating Geometric Shapes */}
-          {/* Large circle - top left - light green */}
-          <div className="absolute top-[10%] left-[5%] w-[200px] h-[200px] pointer-events-none z-0 float-slow opacity-20">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/40 to-primary/10 blur-sm"></div>
-          </div>
-
-          {/* Rounded rectangle - bottom right - light blue */}
-          <div className="absolute bottom-[15%] right-[8%] w-[300px] h-[150px] pointer-events-none z-0 float-medium opacity-15">
-            <div className="w-full h-full rounded-3xl bg-gradient-to-br from-secondary-blue/30 to-secondary-blue/10 blur-sm"></div>
-          </div>
-
-          {/* Small circle - middle right - light purple */}
-          <div className="absolute top-[40%] right-[12%] w-[120px] h-[120px] pointer-events-none z-0 float-gentle opacity-15">
-            <div className="w-full h-full rounded-full bg-gradient-radial from-purple-400/30 to-purple-200/10 blur-sm"></div>
-          </div>
-
-          {/* Rising Green Orbs */}
-          <FloatingOrbs />
-
-          <div className="max-w-6xl mx-auto text-center relative z-10">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
-              Indonesia's <span className="text-primary">#1</span> Padel<br/>
+          <div className="max-w-6xl mx-auto text-center relative z-10 w-full">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 sm:mb-8 md:mb-10 leading-tight tracking-tight">
+              Indonesia's <span className="text-primary bg-gradient-to-r from-primary to-green-500 bg-clip-text text-transparent">#1</span> Padel<br/>
               Sponsorship Platform
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 px-2">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-10 sm:mb-12 md:mb-16 px-2 leading-relaxed max-w-4xl mx-auto">
               Verified opportunities. Vetted brands.<br/>
-              <span className="font-semibold text-gray-800">Fast deals. Zero guesswork.</span>
+              <span className="font-bold text-gray-800 bg-gradient-to-r from-primary/20 to-transparent px-2 rounded">Fast deals. Zero guesswork.</span>
             </p>
 
             {/* Two Column Layout with Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {/* Venue Column */}
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border-2 border-primary">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">For Venues/Events</h3>
-                <div className="space-y-3 mb-6 text-left">
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-700">Free to list</span>
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-7 md:p-9 shadow-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] group">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-5 md:mb-7 text-gray-900">For Venues/Events</h3>
+                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-left">
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-700 text-base sm:text-lg">Free to list</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-700">Pay only when deal closes (10-20%)</span>
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-700 text-base sm:text-lg">Pay only when deal closes (10-20%)</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-700">Optional: Professional proposal (3M)</span>
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-700 text-base sm:text-lg">Optional: Professional proposal (3M)</span>
                   </div>
                 </div>
                 <a
                   href="/for-venues"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl hover:bg-green-400 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center"
                 >
                   Find Sponsors →
                 </a>
               </div>
 
               {/* Brand Column */}
-              <div className="bg-gray-900 rounded-2xl p-6 md:p-8 shadow-lg border-2 border-gray-700">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">For Brands</h3>
-                <div className="space-y-3 mb-6 text-left">
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-200">Curated, verified opportunities</span>
+              <div className="bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 sm:p-7 md:p-9 shadow-xl border border-gray-700/50 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] group">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-5 md:mb-7 text-white">For Brands</h3>
+                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-left">
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-200 text-base sm:text-lg">Curated, verified opportunities</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-200">Bundle deals = 30-50% savings</span>
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-200 text-base sm:text-lg">Bundle deals = 30-50% savings</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary text-xl">✓</span>
-                    <span className="text-gray-200">Free consultation available</span>
+                  <div className="flex items-start gap-3 group/item">
+                    <span className="text-primary text-2xl flex-shrink-0 group-hover/item:scale-110 transition-transform">✓</span>
+                    <span className="text-gray-200 text-base sm:text-lg">Free consultation available</span>
                   </div>
                 </div>
                 <a
                   href="/for-brands"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl hover:bg-green-400 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center"
                 >
                   See Opportunities →
                 </a>
