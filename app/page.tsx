@@ -27,8 +27,12 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-          <div className="max-w-6xl mx-auto text-center">
+        <section className="py-12 md:py-20 px-4 relative bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1920&h=1080&fit=crop" alt="Padel Court Background" className="w-full h-full object-cover" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-gray-50/95"></div>
+          <div className="max-w-6xl mx-auto text-center relative z-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Indonesia's <span className="text-primary">#1</span> Padel<br/>
               Sponsorship Platform
@@ -99,11 +103,11 @@ export default function Home() {
             <h3 className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">
               Brands That Trust Us
             </h3>
-            <div className="flex justify-center items-center gap-12 flex-wrap opacity-40">
-              <div className="text-2xl font-bold text-gray-400">Brand Logo 1</div>
-              <div className="text-2xl font-bold text-gray-400">Brand Logo 2</div>
-              <div className="text-2xl font-bold text-gray-400">Brand Logo 3</div>
-              <div className="text-2xl font-bold text-gray-400">Brand Logo 4</div>
+            <div className="flex justify-center items-center gap-12 flex-wrap opacity-60 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300">
+              <img src="/images/brands/sportx.svg" alt="SportX Indonesia" className="h-10" />
+              <img src="/images/brands/nusacoffee.svg" alt="Nusa Coffee" className="h-10" />
+              <img src="/images/brands/techhub.svg" alt="TechHub.id" className="h-10" />
+              <img src="/images/brands/baliproperties.svg" alt="Bali Properties" className="h-10" />
             </div>
           </div>
         </section>
@@ -124,15 +128,15 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Featured Opportunities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Premium 6-Court Venue", location: "Surabaya, East Java", courts: 6, players: "500+", reach: "2000+" },
-                { title: "Elite Sports Complex", location: "Jakarta Selatan", courts: 8, players: "800+", reach: "5000+" },
-                { title: "Coastal Padel Club", location: "Bali, Canggu", courts: 4, players: "300+", reach: "3000+" },
-                { title: "Championship Tournament", location: "Bandung", courts: 10, players: "1000+", reach: "10000+" },
-                { title: "Community Padel Center", location: "Yogyakarta", courts: 3, players: "200+", reach: "1500+" },
-                { title: "Executive Sports Hub", location: "Jakarta Pusat", courts: 5, players: "600+", reach: "4000+" }
+                { title: "Premium 6-Court Venue", location: "Surabaya, East Java", courts: 6, players: "500+", reach: "2000+", image: "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=400&h=300&fit=crop" },
+                { title: "Elite Sports Complex", location: "Jakarta Selatan", courts: 8, players: "800+", reach: "5000+", image: "https://images.unsplash.com/photo-1595435742656-5272d0f6c8c1?w=400&h=300&fit=crop" },
+                { title: "Coastal Padel Club", location: "Bali, Canggu", courts: 4, players: "300+", reach: "3000+", image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&h=300&fit=crop" },
+                { title: "Championship Tournament", location: "Bandung", courts: 10, players: "1000+", reach: "10000+", image: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=300&fit=crop" },
+                { title: "Community Padel Center", location: "Yogyakarta", courts: 3, players: "200+", reach: "1500+", image: "https://images.unsplash.com/photo-1576678927484-cc907957ee7a?w=400&h=300&fit=crop" },
+                { title: "Executive Sports Hub", location: "Jakarta Pusat", courts: 5, players: "600+", reach: "4000+", image: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=300&fit=crop" }
               ].map((venue, i) => (
                 <div key={i} className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden">
-                  <div className="h-40 bg-gradient-to-br from-primary to-green-600"></div>
+                  <img src={venue.image} alt={venue.title} className="h-40 w-full object-cover" />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Venue</span>
@@ -166,25 +170,55 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Success Stories</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Andi+Wijaya&background=10b981&color=fff&size=64&bold=true"
+                    alt="Andi Wijaya"
+                    className="w-16 h-16 rounded-full"
+                  />
+                  <div>
+                    <p className="font-bold text-gray-900">Andi Wijaya</p>
+                    <p className="text-sm text-gray-600">Marketing Director, SportX Indonesia</p>
+                  </div>
+                </div>
                 <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-6 italic">
+                <p className="text-gray-700 mb-2 italic">
                   CSP helped us close 100M in sponsorships across 8 venues in Q1 2025. We're now the top-of-mind brand in Surabaya's padel scene.
                 </p>
-                <p className="font-semibold text-gray-900">— Marketing Director, Brand X</p>
               </div>
               <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Siti+Rahman&background=3b82f6&color=fff&size=64&bold=true"
+                    alt="Siti Rahman"
+                    className="w-16 h-16 rounded-full"
+                  />
+                  <div>
+                    <p className="font-bold text-gray-900">Siti Rahman</p>
+                    <p className="text-sm text-gray-600">Tournament Director, Jakarta Padel Open</p>
+                  </div>
+                </div>
                 <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-6 italic">
+                <p className="text-gray-700 mb-2 italic">
                   Within 3 weeks, CSP secured 50M in sponsors for our tournament series. Their network is unmatched.
                 </p>
-                <p className="font-semibold text-gray-900">— Tournament Director, Event Y</p>
               </div>
               <div className="bg-gray-50 p-8 rounded-lg">
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Budi+Santoso&background=f59e0b&color=fff&size=64&bold=true"
+                    alt="Budi Santoso"
+                    className="w-16 h-16 rounded-full"
+                  />
+                  <div>
+                    <p className="font-bold text-gray-900">Budi Santoso</p>
+                    <p className="text-sm text-gray-600">Owner, Surabaya Padel Club</p>
+                  </div>
+                </div>
                 <div className="text-4xl text-primary mb-4">"</div>
-                <p className="text-gray-700 mb-6 italic">
+                <p className="text-gray-700 mb-2 italic">
                   We listed our venue for free and landed a 6-month sponsorship deal worth 25M. CSP handled everything.
                 </p>
-                <p className="font-semibold text-gray-900">— Venue Owner, Surabaya</p>
               </div>
             </div>
           </div>
