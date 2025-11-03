@@ -261,7 +261,7 @@ export default function Home() {
           <p className="mb-2">
             <a href="/about" className="hover:text-primary transition">About CSP</a>
             {" | "}
-            Contact WhatsApp: <a href="https://wa.me/6281234567890" className="hover:text-primary transition">+62-812-3456-7890</a>
+            Contact WhatsApp: <a href="https://wa.me/6282282226009" className="hover:text-primary transition">+62-822-8222-6009</a>
           </p>
           <p className="text-gray-400 text-sm">&copy; 2025 CariSponsorPadel</p>
         </div>
