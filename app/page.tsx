@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
                 <a
                   href="/for-venues"
-                  className="block w-full bg-gradient-primary text-white px-8 py-4 rounded-md font-semibold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
                   Find Sponsors →
                 </a>
@@ -115,7 +115,7 @@ export default function Home() {
                 </div>
                 <a
                   href="/for-brands"
-                  className="block w-full bg-gradient-primary text-white px-8 py-4 rounded-md font-semibold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
+                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
                 >
                   See Opportunities →
                 </a>
@@ -265,7 +265,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
                 href="/for-venues"
-                className="bg-gradient-primary text-white px-8 py-5 rounded-lg font-bold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center min-h-[120px]"
+                className="bg-primary text-gray-900 px-8 py-5 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I Have a Venue/Event</div>
                 <div className="flex items-center gap-2">
@@ -274,7 +274,7 @@ export default function Home() {
               </a>
               <a
                 href="/for-brands"
-                className="bg-gradient-primary text-white px-8 py-5 rounded-lg font-bold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center min-h-[120px]"
+                className="bg-gray-900 text-white px-8 py-5 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I'm a Brand</div>
                 <div className="flex items-center gap-2">
