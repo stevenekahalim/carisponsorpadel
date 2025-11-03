@@ -251,7 +251,7 @@ export default function Opportunities() {
                       href={getBrandWhatsAppLink(card.title)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full bg-primary text-gray-900 px-4 py-3 rounded-lg font-semibold hover:bg-green-400 transition text-center"
+                      className="block w-full bg-gradient-primary text-white px-4 py-3 rounded-lg font-semibold shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
                     >
                       Request Info
                     </a>

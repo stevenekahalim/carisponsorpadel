@@ -27,11 +27,21 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-12 md:py-20 px-4 relative bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
+        <section className="py-12 md:py-20 px-4 relative bg-gradient-to-b from-white to-bg-gray-50 overflow-hidden">
+          {/* Green gradient orb (top right) */}
+          <div className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] pointer-events-none z-0">
+            <div className="w-full h-full rounded-full bg-gradient-radial from-primary/15 via-primary/5 to-transparent blur-[80px]"></div>
+          </div>
+
+          {/* Blue gradient orb (bottom left) */}
+          <div className="absolute bottom-[-200px] left-[-200px] w-[500px] h-[500px] pointer-events-none z-0">
+            <div className="w-full h-full rounded-full bg-gradient-radial from-secondary-blue/10 via-secondary-blue/3 to-transparent blur-[80px]"></div>
+          </div>
+
+          {/* Background image (very subtle) */}
+          <div className="absolute inset-0 opacity-5 z-0">
             <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1920&h=1080&fit=crop" alt="Padel Court Background" className="w-full h-full object-cover" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-gray-50/95"></div>
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Indonesia's <span className="text-primary">#1</span> Padel<br/>
@@ -63,7 +73,7 @@ export default function Home() {
                 </div>
                 <a
                   href="/for-venues"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
+                  className="block w-full bg-gradient-primary text-white px-8 py-4 rounded-md font-semibold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
                 >
                   Find Sponsors →
                 </a>
@@ -88,7 +98,7 @@ export default function Home() {
                 </div>
                 <a
                   href="/for-brands"
-                  className="block w-full bg-primary text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-md text-center"
+                  className="block w-full bg-gradient-primary text-white px-8 py-4 rounded-md font-semibold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 text-center"
                 >
                   See Opportunities →
                 </a>
@@ -135,7 +145,7 @@ export default function Home() {
                 { title: "Community Padel Center", location: "Yogyakarta", courts: 3, players: "200+", reach: "1500+", image: "https://images.unsplash.com/photo-1576678927484-cc907957ee7a?w=400&h=300&fit=crop" },
                 { title: "Executive Sports Hub", location: "Jakarta Pusat", courts: 5, players: "600+", reach: "4000+", image: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=300&fit=crop" }
               ].map((venue, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden">
+                <div key={i} className="bg-white rounded-lg border border-border-gray shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
                   <img src={venue.image} alt={venue.title} className="h-40 w-full object-cover" />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
@@ -149,7 +159,7 @@ export default function Home() {
                       <div>• {venue.players} monthly players</div>
                       <div>• {venue.reach} social reach</div>
                     </div>
-                    <a href="/opportunities" className="block w-full bg-primary text-gray-900 text-center py-2 rounded-lg font-semibold hover:bg-green-400 transition">
+                    <a href="/opportunities" className="block w-full bg-gradient-primary text-white text-center py-2 rounded-lg font-semibold shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200">
                       Request Info
                     </a>
                   </div>
@@ -260,7 +270,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <a
                 href="/for-venues"
-                className="bg-primary text-gray-900 px-8 py-5 rounded-lg font-bold text-lg hover:bg-green-400 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
+                className="bg-gradient-primary text-white px-8 py-5 rounded-lg font-bold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I Have a Venue/Event</div>
                 <div className="flex items-center gap-2">
@@ -269,7 +279,7 @@ export default function Home() {
               </a>
               <a
                 href="/for-brands"
-                className="bg-gray-900 text-white px-8 py-5 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg flex flex-col items-center justify-center min-h-[120px]"
+                className="bg-gradient-primary text-white px-8 py-5 rounded-lg font-bold text-lg shadow-green hover:shadow-green-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col items-center justify-center min-h-[120px]"
               >
                 <div className="text-sm font-normal mb-1">I'm a Brand</div>
                 <div className="flex items-center gap-2">

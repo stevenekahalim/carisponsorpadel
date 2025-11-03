@@ -111,7 +111,7 @@ export default function ForVenues() {
             href={getVenueWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition shadow-lg"
+            className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200"
           >
             💬 Contact Us on WhatsApp
           </a>

@@ -110,6 +110,11 @@ const config: Config = {
       backdropBlur: {
         'md': '20px',
       },
+      // Gradients
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+        'gradient-primary': 'linear-gradient(135deg, #00E67A 0%, #00CC6E 100%)',
+      },
     },
   },
   plugins: [],
