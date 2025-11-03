@@ -53,7 +53,7 @@ export default function StickyCTA() {
           <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Brand</div>
           <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
             <span className="hidden md:inline">Show Me Opportunities →</span>
-            <span className="md:hidden">See Opps</span>
+            <span className="md:hidden">View Deals</span>
           </div>
         </a>
       </div>
