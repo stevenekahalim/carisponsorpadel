@@ -34,24 +34,26 @@ export default function StickyCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 py-4 px-4">
-      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 py-2 md:py-4 px-2 md:px-4">
+      <div className="max-w-3xl mx-auto grid grid-cols-2 gap-2 md:gap-4">
         <a
           href="/for-venues"
-          className="bg-primary text-gray-900 px-6 py-4 rounded-lg font-bold text-base hover:bg-green-400 transition shadow-md flex flex-col items-center justify-center"
+          className="bg-primary text-gray-900 px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-green-400 transition shadow-md flex flex-col items-center justify-center"
         >
-          <div className="text-xs font-normal mb-1">I Have a Venue/Event</div>
-          <div className="flex items-center gap-2">
-            Find Me Sponsors →
+          <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Venue/Event</div>
+          <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
+            <span className="hidden md:inline">Find Me Sponsors →</span>
+            <span className="md:hidden">Find Sponsors</span>
           </div>
         </a>
         <a
           href="/opportunities"
-          className="bg-gray-900 text-white px-6 py-4 rounded-lg font-bold text-base hover:bg-gray-800 transition shadow-md flex flex-col items-center justify-center"
+          className="bg-gray-900 text-white px-3 md:px-6 py-2 md:py-4 rounded-lg font-bold text-xs md:text-base hover:bg-gray-800 transition shadow-md flex flex-col items-center justify-center"
         >
-          <div className="text-xs font-normal mb-1">I'm a Brand</div>
-          <div className="flex items-center gap-2">
-            Show Me Opportunities →
+          <div className="text-[10px] md:text-xs font-normal mb-0.5 md:mb-1">Brand</div>
+          <div className="flex items-center gap-1 md:gap-2 text-center leading-tight">
+            <span className="hidden md:inline">Show Me Opportunities →</span>
+            <span className="md:hidden">See Opps</span>
           </div>
         </a>
       </div>
