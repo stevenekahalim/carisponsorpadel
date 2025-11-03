@@ -60,40 +60,40 @@ export default function ForVenues() {
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <a href="/" className="text-2xl font-bold text-gray-900">
-              Cari<span className="text-primary">Sponsor</span>Padel
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 md:py-4">
+          <div className="flex justify-between items-center gap-2">
+            <a href="/" className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 flex-shrink-0">
+              CariSponsor<span className="text-primary">Padel</span>
             </a>
-            <div className="flex gap-4">
-              <a href="/for-venues" className="text-primary font-semibold">
-                For Venues
+            <div className="flex gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base flex-shrink-0">
+              <a href="/for-venues" className="text-primary font-semibold whitespace-nowrap">
+                Venues
               </a>
-              <a href="/for-brands" className="text-gray-600 hover:text-gray-900">
-                For Brands
+              <a href="/for-brands" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                Brands
               </a>
-              <a href="/opportunities" className="text-gray-600 hover:text-gray-900">
-                Browse Opportunities
+              <a href="/opportunities" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                Opps
               </a>
             </div>
           </div>
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main className="max-w-4xl mx-auto px-4 py-8 md:py-12">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
             Find Sponsors for Your <span className="text-primary">Padel Venue or Event</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Connect with brands looking to sponsor padel venues, tournaments, and communities across Indonesia
           </p>
         </div>
 
         {/* How It Works */}
-        <div className="bg-white rounded-lg p-8 mb-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h2>
+        <div className="bg-white rounded-lg p-6 md:p-8 mb-8 shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <div className="bg-primary text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">
@@ -120,8 +120,8 @@ export default function ForVenues() {
         </div>
 
         {/* Submission Form */}
-        <div className="bg-white rounded-lg p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Submit Your Opportunity</h2>
+        <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Submit Your Opportunity</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Contact Information */}

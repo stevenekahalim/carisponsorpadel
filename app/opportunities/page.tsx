@@ -64,13 +64,13 @@ function InquiryModal({ card, onClose }: { card: OpportunityCard; onClose: () =>
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-white rounded-lg max-w-2xl w-full p-8" onClick={(e) => e.stopPropagation()}>
-        <div className="flex justify-between items-start mb-6">
+      <div className="bg-white rounded-lg max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div className="flex justify-between items-start mb-4 md:mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Request Information</h2>
-            <p className="text-gray-600 mt-2">About: {card.title}</p>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Request Information</h2>
+            <p className="text-sm md:text-base text-gray-600 mt-2">About: {card.title}</p>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl">
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl flex-shrink-0">
             ×
           </button>
         </div>
@@ -241,39 +241,39 @@ export default function Opportunities() {
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <a href="/" className="text-2xl font-bold text-gray-900">
-              Cari<span className="text-primary">Sponsor</span>Padel
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 md:py-4">
+          <div className="flex justify-between items-center gap-2">
+            <a href="/" className="text-base md:text-xl lg:text-2xl font-bold text-gray-900 flex-shrink-0">
+              CariSponsor<span className="text-primary">Padel</span>
             </a>
-            <div className="flex gap-4">
-              <a href="/for-venues" className="text-gray-600 hover:text-gray-900">
-                For Venues
+            <div className="flex gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base flex-shrink-0">
+              <a href="/for-venues" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                Venues
               </a>
-              <a href="/for-brands" className="text-gray-600 hover:text-gray-900">
-                For Brands
+              <a href="/for-brands" className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
+                Brands
               </a>
-              <a href="/opportunities" className="text-primary font-semibold">
-                Browse Opportunities
+              <a href="/opportunities" className="text-primary font-semibold whitespace-nowrap">
+                Opps
               </a>
             </div>
           </div>
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 py-12">
+      <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
             Sponsorship <span className="text-primary">Opportunities</span>
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">
             Browse curated padel sponsorship opportunities across Indonesia
           </p>
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-lg p-6 mb-8 shadow-sm">
+        <div className="bg-white rounded-lg p-4 md:p-6 mb-6 md:mb-8 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Filter by Type</label>
